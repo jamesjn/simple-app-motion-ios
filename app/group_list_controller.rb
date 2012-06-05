@@ -23,4 +23,10 @@ class GroupListController < UITableViewController
     cell
   end
 
+  def tableView(tableView, didSelectRowAtIndexPath:indexPath)
+    group_name = tableView.cellForRowAtIndexPath(indexPath).textLabel.text
+    group_tabbar_controller = GroupTabBarController.alloc.initWith(@groups.select{|g| g["name"] == group_name}.first)
+    navigationController.pushViewController(group_tabbar_controller, animated:true)
+  end
+
 end

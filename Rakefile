@@ -9,10 +9,7 @@ Motion::Project::App.setup do |app|
   app.frameworks += ['libicucore.dylib', 'CFNetwork', 'Security']
   
   app.pods do
-    dependency 'SocketRocket'
-    dependency 'SBJson'
+    pod 'socket.IO'
   end
 
-  app.vendor_project( "vendor/socketio", :static,
-                      :products => ['libsocketio.a'])
 end

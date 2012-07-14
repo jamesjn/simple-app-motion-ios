@@ -5,7 +5,7 @@ class InfoController < UIViewController
     view.addSubview(info_textview)
     self.tabBarItem = UITabBarItem.alloc.initWithTitle('Info', image:UIImage.imageNamed('star.png'), tag:1)
     #self.view.backgroundColor = UIColor.colorWithPatternImage(UIImage.imageNamed("steel-mesh.png"))
-    init()
+    init
   end
 
   def create_info_textview(info)

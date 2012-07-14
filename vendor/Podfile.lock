@@ -1,7 +1,9 @@
 PODS:
   - SBJson (3.1)
   - SocketRocket (0.1)
+  - socket.IO (0.0.1):
+    - SBJson (~> 3.1)
+    - SocketRocket (~> 0.1)
 
 DEPENDENCIES:
-  - SBJson
-  - SocketRocket
+  - socket.IO

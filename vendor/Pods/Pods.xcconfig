@@ -1,4 +1,4 @@
 PODS_ROOT = ${SRCROOT}/Pods
 ALWAYS_SEARCH_USER_PATHS = YES
-OTHER_LDFLAGS = -ObjC -licucore -framework CFNetwork -framework Security
-HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/SBJson" "${PODS_ROOT}/Headers/SocketRocket"
+OTHER_LDFLAGS = -ObjC -licucore -framework CFNetwork -framework SBJson -framework Security -framework SocketRocket
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/SBJson" "${PODS_ROOT}/Headers/SocketRocket" "${PODS_ROOT}/Headers/socket.IO"

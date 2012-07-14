@@ -1,0 +1,682 @@
+<?xml version='1.0'?>
+<signatures version='1.0'>
+<constant name='SRWebSocketErrorDomain' declared_type='NSString*' const='true' type='@'/>
+<enum name='SBJsonStreamParserAdapterArray' value='1'/>
+<enum name='SBJsonStreamParserAdapterNone' value='0'/>
+<enum name='SBJsonStreamParserAdapterObject' value='2'/>
+<enum name='SBJsonStreamParserComplete' value='0'/>
+<enum name='SBJsonStreamParserError' value='2'/>
+<enum name='SBJsonStreamParserWaitingForData' value='1'/>
+<enum name='SR_CLOSED' value='3'/>
+<enum name='SR_CLOSING' value='2'/>
+<enum name='SR_CONNECTING' value='0'/>
+<enum name='SR_OPEN' value='1'/>
+<enum name='sbjson_token_array_end' value='2'/>
+<enum name='sbjson_token_array_start' value='1'/>
+<enum name='sbjson_token_eof' value='0'/>
+<enum name='sbjson_token_error' value='-1'/>
+<enum name='sbjson_token_false' value='10'/>
+<enum name='sbjson_token_keyval_separator' value='6'/>
+<enum name='sbjson_token_null' value='11'/>
+<enum name='sbjson_token_number' value='7'/>
+<enum name='sbjson_token_object_end' value='4'/>
+<enum name='sbjson_token_object_start' value='3'/>
+<enum name='sbjson_token_separator' value='5'/>
+<enum name='sbjson_token_string' value='8'/>
+<enum name='sbjson_token_true' value='9'/>
+<function name='b64_ntop'>
+<arg name='src' declared_type='u_char*' const='true' type='*'/>
+<arg name='srclength' declared_type='size_t' type='L'/>
+<arg name='target' declared_type='char*' type='*'/>
+<arg name='targsize' declared_type='size_t' type='L'/>
+<retval declared_type='int' type='i'/>
+</function>
+<function name='b64_pton'>
+<arg name='src' declared_type='char*' const='true' type='*'/>
+<arg name='target' declared_type='u_char*' type='*'/>
+<arg name='targsize' declared_type='size_t' type='L'/>
+<retval declared_type='int' type='i'/>
+</function>
+<class name='NSData'>
+<method selector='JSONValue'>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='SR_stringByBase64Encoding'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+</class>
+<class name='NSMutableURLRequest'>
+<method selector='SR_SSLPinnedCertificates'>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+<method selector='setSR_SSLPinnedCertificates:'>
+<arg name='SR_SSLPinnedCertificates' declared_type='NSArray*' type='@' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='NSObject'>
+<method selector='JSONRepresentation'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='parser:foundArray:'>
+<arg name='parser' declared_type='SBJsonStreamParser*' type='@' index='0'/>
+<arg name='array' declared_type='NSArray*' type='@' index='1'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='parser:foundBoolean:'>
+<arg name='parser' declared_type='SBJsonStreamParser*' type='@' index='0'/>
+<arg name='x' declared_type='BOOL' type='B' index='1'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='parser:foundNumber:'>
+<arg name='parser' declared_type='SBJsonStreamParser*' type='@' index='0'/>
+<arg name='num' declared_type='NSNumber*' type='@' index='1'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='parser:foundObject:'>
+<arg name='parser' declared_type='SBJsonStreamParser*' type='@' index='0'/>
+<arg name='dict' declared_type='NSDictionary*' type='@' index='1'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='parser:foundObjectKey:'>
+<arg name='parser' declared_type='SBJsonStreamParser*' type='@' index='0'/>
+<arg name='key' declared_type='NSString*' type='@' index='1'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='parser:foundString:'>
+<arg name='parser' declared_type='SBJsonStreamParser*' type='@' index='0'/>
+<arg name='string' declared_type='NSString*' type='@' index='1'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='parserFoundArrayEnd:'>
+<arg name='parser' declared_type='SBJsonStreamParser*' type='@' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='parserFoundArrayStart:'>
+<arg name='parser' declared_type='SBJsonStreamParser*' type='@' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='parserFoundNull:'>
+<arg name='parser' declared_type='SBJsonStreamParser*' type='@' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='parserFoundObjectEnd:'>
+<arg name='parser' declared_type='SBJsonStreamParser*' type='@' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='parserFoundObjectStart:'>
+<arg name='parser' declared_type='SBJsonStreamParser*' type='@' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='proxyForJson'>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='webSocket:didCloseWithCode:reason:wasClean:'>
+<arg name='webSocket' declared_type='SRWebSocket*' type='@' index='0'/>
+<arg name='code' declared_type='NSInteger' type='i' index='1'/>
+<arg name='reason' declared_type='NSString*' type='@' index='2'/>
+<arg name='wasClean' declared_type='BOOL' type='B' index='3'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='webSocket:didFailWithError:'>
+<arg name='webSocket' declared_type='SRWebSocket*' type='@' index='0'/>
+<arg name='error' declared_type='NSError*' type='@' index='1'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='webSocket:didReceiveMessage:'>
+<arg name='webSocket' declared_type='SRWebSocket*' type='@' index='0'/>
+<arg name='message' declared_type='id' type='@' index='1'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='webSocketDidOpen:'>
+<arg name='webSocket' declared_type='SRWebSocket*' type='@' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='writer:appendBytes:length:'>
+<arg name='writer' declared_type='SBJsonStreamWriter*' type='@' index='0'/>
+<arg name='bytes' declared_type='void*' const='true' type='^v' index='1'/>
+<arg name='length' declared_type='NSUInteger' type='I' index='2'/>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='NSString'>
+<method selector='JSONValue'>
+<retval declared_type='id' type='@'/>
+</method>
+</class>
+<class name='NSURLRequest'>
+<method selector='SR_SSLPinnedCertificates'>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+</class>
+<class name='SBJsonParser'>
+<method selector='error'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='maxDepth'>
+<retval declared_type='NSUInteger' type='I'/>
+</method>
+<method selector='objectWithData:'>
+<arg name='data' declared_type='NSData*' type='@' index='0'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='objectWithString:'>
+<arg name='repr' declared_type='NSString*' type='@' index='0'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='objectWithString:error:'>
+<arg name='jsonText' declared_type='NSString*' type='@' index='0'/>
+<arg name='error' declared_type='NSError**' type='^@' index='1'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='setError:'>
+<arg name='error' declared_type='NSString*' type='@' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setMaxDepth:'>
+<arg name='maxDepth' declared_type='NSUInteger' type='I' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='SBJsonStreamParser'>
+<method selector='delegate'>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='error'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='maxDepth'>
+<retval declared_type='NSUInteger' type='I'/>
+</method>
+<method selector='parse:'>
+<arg name='data' declared_type='NSData*' type='@' index='0'/>
+<retval declared_type='SBJsonStreamParserStatus' type='i'/>
+</method>
+<method selector='setDelegate:'>
+<arg name='delegate' declared_type='id' type='@' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setError:'>
+<arg name='error' declared_type='NSString*' type='@' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setMaxDepth:'>
+<arg name='maxDepth' declared_type='NSUInteger' type='I' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setState:'>
+<arg name='state' declared_type='SBJsonStreamParserState*' type='@' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setSupportMultipleDocuments:'>
+<arg name='supportMultipleDocuments' declared_type='BOOL' type='B' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='state'>
+<retval declared_type='SBJsonStreamParserState*' type='@'/>
+</method>
+<method selector='stateStack'>
+<retval declared_type='NSMutableArray*' type='@'/>
+</method>
+<method selector='supportMultipleDocuments'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+</class>
+<class name='SBJsonStreamParserAccumulator'>
+<method selector='setValue:'>
+<arg name='value' declared_type='id' type='@' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='value'>
+<retval declared_type='id' type='@'/>
+</method>
+</class>
+<class name='SBJsonStreamParserAdapter'>
+<method selector='delegate'>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='levelsToSkip'>
+<retval declared_type='NSUInteger' type='I'/>
+</method>
+<method selector='setDelegate:'>
+<arg name='delegate' declared_type='id' type='@' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setLevelsToSkip:'>
+<arg name='levelsToSkip' declared_type='NSUInteger' type='I' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='SBJsonStreamParserState'>
+<method selector='isError'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='name'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='needKey'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='parser:shouldAcceptToken:'>
+<arg name='parser' declared_type='SBJsonStreamParser*' type='@' index='0'/>
+<arg name='token' declared_type='sbjson_token_t' type='i' index='1'/>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='parser:shouldTransitionTo:'>
+<arg name='parser' declared_type='SBJsonStreamParser*' type='@' index='0'/>
+<arg name='tok' declared_type='sbjson_token_t' type='i' index='1'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='parserShouldReturn:'>
+<arg name='parser' declared_type='SBJsonStreamParser*' type='@' index='0'/>
+<retval declared_type='SBJsonStreamParserStatus' type='i'/>
+</method>
+<method selector='sharedInstance' class_method='true'>
+<retval declared_type='id' type='@'/>
+</method>
+</class>
+<class name='SBJsonStreamWriter'>
+<method selector='appendBytes:length:'>
+<arg name='bytes' declared_type='void*' const='true' type='^v' index='0'/>
+<arg name='length' declared_type='NSUInteger' type='I' index='1'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='delegate'>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='error'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='humanReadable'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='maxDepth'>
+<retval declared_type='NSUInteger' type='I'/>
+</method>
+<method selector='setDelegate:'>
+<arg name='delegate' declared_type='id' type='@' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setError:'>
+<arg name='error' declared_type='NSString*' type='@' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setHumanReadable:'>
+<arg name='humanReadable' declared_type='BOOL' type='B' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setMaxDepth:'>
+<arg name='maxDepth' declared_type='NSUInteger' type='I' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setSortKeys:'>
+<arg name='sortKeys' declared_type='BOOL' type='B' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setSortKeysComparator:'>
+<arg name='sortKeysComparator' function_pointer='true' declared_type='NSComparator' type='@?' index='0'>
+<arg declared_type='id' type='@'/>
+<arg declared_type='id' type='@'/>
+<retval declared_type='NSComparisonResult' type='i'/>
+</arg>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setState:'>
+<arg name='state' declared_type='SBJsonStreamWriterState*' type='@' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='sortKeys'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='sortKeysComparator'>
+<retval function_pointer='true' declared_type='NSComparator' type='@?'>
+<arg declared_type='id' type='@'/>
+<arg declared_type='id' type='@'/>
+<retval declared_type='NSComparisonResult' type='i'/>
+</retval>
+</method>
+<method selector='state'>
+<retval declared_type='SBJsonStreamWriterState*' type='@'/>
+</method>
+<method selector='stateStack'>
+<retval declared_type='NSMutableArray*' type='@'/>
+</method>
+<method selector='writeArray:'>
+<arg name='array' declared_type='NSArray*' type='@' index='0'/>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='writeArrayClose'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='writeArrayOpen'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='writeBool:'>
+<arg name='x' declared_type='BOOL' type='B' index='0'/>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='writeNull'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='writeNumber:'>
+<arg name='n' declared_type='NSNumber*' type='@' index='0'/>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='writeObject:'>
+<arg name='dict' declared_type='NSDictionary*' type='@' index='0'/>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='writeObjectClose'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='writeObjectOpen'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='writeString:'>
+<arg name='s' declared_type='NSString*' type='@' index='0'/>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='writeValue:'>
+<arg name='v' declared_type='id' type='@' index='0'/>
+<retval declared_type='BOOL' type='B'/>
+</method>
+</class>
+<class name='SBJsonStreamWriterAccumulator'>
+<method selector='data'>
+<retval declared_type='NSMutableData*' type='@'/>
+</method>
+</class>
+<class name='SBJsonStreamWriterState'>
+<method selector='appendSeparator:'>
+<arg name='writer' declared_type='SBJsonStreamWriter*' type='@' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='appendWhitespace:'>
+<arg name='writer' declared_type='SBJsonStreamWriter*' type='@' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='expectingKey:'>
+<arg name='writer' declared_type='SBJsonStreamWriter*' type='@' index='0'/>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='isInvalidState:'>
+<arg name='writer' declared_type='SBJsonStreamWriter*' type='@' index='0'/>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='sharedInstance' class_method='true'>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='transitionState:'>
+<arg name='writer' declared_type='SBJsonStreamWriter*' type='@' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='SBJsonTokeniser'>
+<method selector='appendData:'>
+<arg name='data_' declared_type='NSData*' type='@' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='error'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='getToken:'>
+<arg name='token' declared_type='NSObject**' type='^@' index='0'/>
+<retval declared_type='sbjson_token_t' type='i'/>
+</method>
+<method selector='setError:'>
+<arg name='error' declared_type='NSString*' type='@' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setStream:'>
+<arg name='stream' declared_type='SBJsonUTF8Stream*' type='@' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='stream'>
+<retval declared_type='SBJsonUTF8Stream*' type='@'/>
+</method>
+</class>
+<class name='SBJsonUTF8Stream'>
+<method selector='appendData:'>
+<arg name='data_' declared_type='NSData*' type='@' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='getNextUnichar:'>
+<arg name='ch' declared_type='unichar*' type='^S' index='0'/>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='getStringFragment:'>
+<arg name='string' declared_type='NSString**' type='^@' index='0'/>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='getUnichar:'>
+<arg name='ch' declared_type='unichar*' type='^S' index='0'/>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='haveRemainingCharacters:'>
+<arg name='chars' declared_type='NSUInteger' type='I' index='0'/>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='index'>
+<retval declared_type='NSUInteger' type='I'/>
+</method>
+<method selector='setIndex:'>
+<arg name='index' declared_type='NSUInteger' type='I' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='skip'>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='skipCharacters:length:'>
+<arg name='chars' declared_type='char*' const='true' type='*' index='0'/>
+<arg name='len' declared_type='NSUInteger' type='I' index='1'/>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='skipWhitespace'>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='stringWithRange:'>
+<arg name='range' declared_type='NSRange' type='{_NSRange=II}' index='0'/>
+<retval declared_type='NSString*' type='@'/>
+</method>
+</class>
+<class name='SBJsonWriter'>
+<method selector='dataWithObject:'>
+<arg name='value' declared_type='id' type='@' index='0'/>
+<retval declared_type='NSData*' type='@'/>
+</method>
+<method selector='error'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='humanReadable'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='maxDepth'>
+<retval declared_type='NSUInteger' type='I'/>
+</method>
+<method selector='setHumanReadable:'>
+<arg name='humanReadable' declared_type='BOOL' type='B' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setMaxDepth:'>
+<arg name='maxDepth' declared_type='NSUInteger' type='I' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setSortKeys:'>
+<arg name='sortKeys' declared_type='BOOL' type='B' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setSortKeysComparator:'>
+<arg name='sortKeysComparator' function_pointer='true' declared_type='NSComparator' type='@?' index='0'>
+<arg declared_type='id' type='@'/>
+<arg declared_type='id' type='@'/>
+<retval declared_type='NSComparisonResult' type='i'/>
+</arg>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='sortKeys'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='sortKeysComparator'>
+<retval function_pointer='true' declared_type='NSComparator' type='@?'>
+<arg declared_type='id' type='@'/>
+<arg declared_type='id' type='@'/>
+<retval declared_type='NSComparisonResult' type='i'/>
+</retval>
+</method>
+<method selector='stringWithObject:'>
+<arg name='value' declared_type='id' type='@' index='0'/>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='stringWithObject:error:'>
+<arg name='value' declared_type='id' type='@' index='0'/>
+<arg name='error' declared_type='NSError**' type='^@' index='1'/>
+<retval declared_type='NSString*' type='@'/>
+</method>
+</class>
+<class name='SRWebSocket'>
+<method selector='close'>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='closeWithCode:reason:'>
+<arg name='code' declared_type='NSInteger' type='i' index='0'/>
+<arg name='reason' declared_type='NSString*' type='@' index='1'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='delegate'>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='initWithURL:'>
+<arg name='url' declared_type='NSURL*' type='@' index='0'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='initWithURL:protocols:'>
+<arg name='url' declared_type='NSURL*' type='@' index='0'/>
+<arg name='protocols' declared_type='NSArray*' type='@' index='1'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='initWithURLRequest:'>
+<arg name='request' declared_type='NSURLRequest*' type='@' index='0'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='initWithURLRequest:protocols:'>
+<arg name='request' declared_type='NSURLRequest*' type='@' index='0'/>
+<arg name='protocols' declared_type='NSArray*' type='@' index='1'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='open'>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='protocol'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='readyState'>
+<retval declared_type='SRReadyState' type='i'/>
+</method>
+<method selector='send:'>
+<arg name='data' declared_type='id' type='@' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setDelegate:'>
+<arg name='delegate' declared_type='id' type='@' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='url'>
+<retval declared_type='NSURL*' type='@'/>
+</method>
+</class>
+<informal_protocol name='NSObject_SBJsonWriting'>
+<method type='@8@0:4' selector='JSONRepresentation'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+</informal_protocol>
+<informal_protocol name='SBJsonStreamParserAdapterDelegate'>
+<method type='v16@0:4@8@12' selector='parser:foundArray:'>
+<arg name='parser' declared_type='SBJsonStreamParser*' type='@' index='0'/>
+<arg name='array' declared_type='NSArray*' type='@' index='1'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method type='v16@0:4@8@12' selector='parser:foundObject:'>
+<arg name='parser' declared_type='SBJsonStreamParser*' type='@' index='0'/>
+<arg name='dict' declared_type='NSDictionary*' type='@' index='1'/>
+<retval declared_type='void' type='v'/>
+</method>
+</informal_protocol>
+<informal_protocol name='SBJsonStreamParserDelegate'>
+<method type='v16@0:4@8B12' selector='parser:foundBoolean:'>
+<arg name='parser' declared_type='SBJsonStreamParser*' type='@' index='0'/>
+<arg name='x' declared_type='BOOL' type='B' index='1'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method type='v16@0:4@8@12' selector='parser:foundNumber:'>
+<arg name='parser' declared_type='SBJsonStreamParser*' type='@' index='0'/>
+<arg name='num' declared_type='NSNumber*' type='@' index='1'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method type='v16@0:4@8@12' selector='parser:foundObjectKey:'>
+<arg name='parser' declared_type='SBJsonStreamParser*' type='@' index='0'/>
+<arg name='key' declared_type='NSString*' type='@' index='1'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method type='v16@0:4@8@12' selector='parser:foundString:'>
+<arg name='parser' declared_type='SBJsonStreamParser*' type='@' index='0'/>
+<arg name='string' declared_type='NSString*' type='@' index='1'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method type='v12@0:4@8' selector='parserFoundArrayEnd:'>
+<arg name='parser' declared_type='SBJsonStreamParser*' type='@' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method type='v12@0:4@8' selector='parserFoundArrayStart:'>
+<arg name='parser' declared_type='SBJsonStreamParser*' type='@' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method type='v12@0:4@8' selector='parserFoundNull:'>
+<arg name='parser' declared_type='SBJsonStreamParser*' type='@' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method type='v12@0:4@8' selector='parserFoundObjectEnd:'>
+<arg name='parser' declared_type='SBJsonStreamParser*' type='@' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method type='v12@0:4@8' selector='parserFoundObjectStart:'>
+<arg name='parser' declared_type='SBJsonStreamParser*' type='@' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+</informal_protocol>
+<informal_protocol name='SBJsonStreamWriterDelegate'>
+<method type='v20@0:4@8r^v12I16' selector='writer:appendBytes:length:'>
+<arg name='writer' declared_type='SBJsonStreamWriter*' type='@' index='0'/>
+<arg name='bytes' declared_type='void*' const='true' type='^v' index='1'/>
+<arg name='length' declared_type='NSUInteger' type='I' index='2'/>
+<retval declared_type='void' type='v'/>
+</method>
+</informal_protocol>
+<informal_protocol name='SBProxyForJson'>
+<method type='@8@0:4' selector='proxyForJson'>
+<retval declared_type='id' type='@'/>
+</method>
+</informal_protocol>
+<informal_protocol name='SRWebSocketDelegate'>
+<method type='v24@0:4@8i12@16B20' selector='webSocket:didCloseWithCode:reason:wasClean:'>
+<arg name='webSocket' declared_type='SRWebSocket*' type='@' index='0'/>
+<arg name='code' declared_type='NSInteger' type='i' index='1'/>
+<arg name='reason' declared_type='NSString*' type='@' index='2'/>
+<arg name='wasClean' declared_type='BOOL' type='B' index='3'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method type='v16@0:4@8@12' selector='webSocket:didFailWithError:'>
+<arg name='webSocket' declared_type='SRWebSocket*' type='@' index='0'/>
+<arg name='error' declared_type='NSError*' type='@' index='1'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method type='v16@0:4@8@12' selector='webSocket:didReceiveMessage:'>
+<arg name='webSocket' declared_type='SRWebSocket*' type='@' index='0'/>
+<arg name='message' declared_type='id' type='@' index='1'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method type='v12@0:4@8' selector='webSocketDidOpen:'>
+<arg name='webSocket' declared_type='SRWebSocket*' type='@' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+</informal_protocol>
+</signatures>

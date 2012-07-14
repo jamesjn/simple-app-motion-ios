@@ -1,0 +1,223 @@
+<?xml version='1.0'?>
+<signatures version='1.0'>
+<class name='NSObject'>
+<method selector='socketIO:didReceiveEvent:'>
+<arg name='socket' declared_type='SocketIO*' type='@' index='0'/>
+<arg name='packet' declared_type='SocketIOPacket*' type='@' index='1'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='socketIO:didReceiveJSON:'>
+<arg name='socket' declared_type='SocketIO*' type='@' index='0'/>
+<arg name='packet' declared_type='SocketIOPacket*' type='@' index='1'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='socketIO:didReceiveMessage:'>
+<arg name='socket' declared_type='SocketIO*' type='@' index='0'/>
+<arg name='packet' declared_type='SocketIOPacket*' type='@' index='1'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='socketIO:didSendMessage:'>
+<arg name='socket' declared_type='SocketIO*' type='@' index='0'/>
+<arg name='packet' declared_type='SocketIOPacket*' type='@' index='1'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='socketIODidConnect:'>
+<arg name='socket' declared_type='SocketIO*' type='@' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='socketIODidDisconnect:'>
+<arg name='socket' declared_type='SocketIO*' type='@' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='socketIOHandshakeFailed:'>
+<arg name='socket' declared_type='SocketIO*' type='@' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='SocketIO'>
+<method selector='connectToHost:onPort:'>
+<arg name='host' declared_type='NSString*' type='@' index='0'/>
+<arg name='port' declared_type='NSInteger' type='i' index='1'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='connectToHost:onPort:withParams:'>
+<arg name='host' declared_type='NSString*' type='@' index='0'/>
+<arg name='port' declared_type='NSInteger' type='i' index='1'/>
+<arg name='params' declared_type='NSDictionary*' type='@' index='2'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='connectToHost:onPort:withParams:withNamespace:'>
+<arg name='host' declared_type='NSString*' type='@' index='0'/>
+<arg name='port' declared_type='NSInteger' type='i' index='1'/>
+<arg name='params' declared_type='NSDictionary*' type='@' index='2'/>
+<arg name='endpoint' declared_type='NSString*' type='@' index='3'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='disconnect'>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='initWithDelegate:'>
+<arg name='delegate' declared_type='id' type='@' index='0'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='isConnected'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='isConnecting'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='sendAcknowledgement:withArgs:'>
+<arg name='pId' declared_type='NSString*' type='@' index='0'/>
+<arg name='data' declared_type='NSArray*' type='@' index='1'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='sendEvent:withData:'>
+<arg name='eventName' declared_type='NSString*' type='@' index='0'/>
+<arg name='data' declared_type='NSDictionary*' type='@' index='1'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='sendEvent:withData:andAcknowledge:'>
+<arg name='eventName' declared_type='NSString*' type='@' index='0'/>
+<arg name='data' declared_type='NSDictionary*' type='@' index='1'/>
+<arg name='function' function_pointer='true' declared_type='SocketIOCallback' type='@?' index='2'>
+<arg declared_type='id' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='sendJSON:'>
+<arg name='data' declared_type='NSDictionary*' type='@' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='sendJSON:withAcknowledge:'>
+<arg name='data' declared_type='NSDictionary*' type='@' index='0'/>
+<arg name='function' function_pointer='true' declared_type='SocketIOCallback' type='@?' index='1'>
+<arg declared_type='id' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='sendMessage:'>
+<arg name='data' declared_type='NSString*' type='@' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='sendMessage:withAcknowledge:'>
+<arg name='data' declared_type='NSString*' type='@' index='0'/>
+<arg name='function' function_pointer='true' declared_type='SocketIOCallback' type='@?' index='1'>
+<arg declared_type='id' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setUseSecure:'>
+<arg name='useSecure' declared_type='BOOL' type='B' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='useSecure'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+</class>
+<class name='SocketIOPacket'>
+<method selector='ack'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='args'>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+<method selector='data'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='dataAsJSON'>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='endpoint'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='initWithType:'>
+<arg name='packetType' declared_type='NSString*' type='@' index='0'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='initWithTypeIndex:'>
+<arg name='index' declared_type='int' type='i' index='0'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='name'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='pId'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='setAck:'>
+<arg name='ack' declared_type='NSString*' type='@' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setArgs:'>
+<arg name='args' declared_type='NSArray*' type='@' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setData:'>
+<arg name='data' declared_type='NSString*' type='@' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setEndpoint:'>
+<arg name='endpoint' declared_type='NSString*' type='@' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setName:'>
+<arg name='name' declared_type='NSString*' type='@' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setPId:'>
+<arg name='pId' declared_type='NSString*' type='@' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setType:'>
+<arg name='type' declared_type='NSString*' type='@' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='type'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='typeAsNumber'>
+<retval declared_type='NSNumber*' type='@'/>
+</method>
+<method selector='typeForIndex:'>
+<arg name='index' declared_type='int' type='i' index='0'/>
+<retval declared_type='NSString*' type='@'/>
+</method>
+</class>
+<informal_protocol name='SocketIODelegate'>
+<method type='v16@0:4@8@12' selector='socketIO:didReceiveEvent:'>
+<arg name='socket' declared_type='SocketIO*' type='@' index='0'/>
+<arg name='packet' declared_type='SocketIOPacket*' type='@' index='1'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method type='v16@0:4@8@12' selector='socketIO:didReceiveJSON:'>
+<arg name='socket' declared_type='SocketIO*' type='@' index='0'/>
+<arg name='packet' declared_type='SocketIOPacket*' type='@' index='1'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method type='v16@0:4@8@12' selector='socketIO:didReceiveMessage:'>
+<arg name='socket' declared_type='SocketIO*' type='@' index='0'/>
+<arg name='packet' declared_type='SocketIOPacket*' type='@' index='1'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method type='v16@0:4@8@12' selector='socketIO:didSendMessage:'>
+<arg name='socket' declared_type='SocketIO*' type='@' index='0'/>
+<arg name='packet' declared_type='SocketIOPacket*' type='@' index='1'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method type='v12@0:4@8' selector='socketIODidConnect:'>
+<arg name='socket' declared_type='SocketIO*' type='@' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method type='v12@0:4@8' selector='socketIODidDisconnect:'>
+<arg name='socket' declared_type='SocketIO*' type='@' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method type='v12@0:4@8' selector='socketIOHandshakeFailed:'>
+<arg name='socket' declared_type='SocketIO*' type='@' index='0'/>
+<retval declared_type='void' type='v'/>
+</method>
+</informal_protocol>
+</signatures>

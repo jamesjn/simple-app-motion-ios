@@ -1,0 +1,7 @@
+PODS:
+  - SBJson (3.1)
+  - SocketRocket (0.1)
+
+DEPENDENCIES:
+  - SBJson
+  - SocketRocket
